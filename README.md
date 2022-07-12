@@ -10,11 +10,11 @@ php artisan migrate
 ## Demo
 You can try this service on demo server: https://linkshortener.firefox.uz/api
 
-##Example
+## Example
 
-#####To shorten new url, similar query should be sent to the service.
-####Request
-```json
+##### To shorten new url, similar query should be sent to the service.
+#### Request
+```graphql
 mutation {
     createUrl(long_url: "http://yourlink.com") {
         id
@@ -24,7 +24,7 @@ mutation {
    }
 }
 ```
-####Response
+#### Response
 ```json
 {
     "data": {
@@ -41,9 +41,9 @@ mutation {
 ------------
 
 
-#####To access information of exact shortened url, similar query should be sent to the service.
-####Request
-```json
+##### To access information of exact shortened url, similar query should be sent to the service.
+#### Request
+```graphql
 {
   url(id: 11) {
     id
@@ -53,7 +53,7 @@ mutation {
   }
 }
 ```
-####Response
+#### Response
 ```json
 {
   "data": {
@@ -70,9 +70,9 @@ mutation {
 ------------
 
 
-#####To access information of all shortened url with pagination, similar query should be sent to the service.
-####Request
-```json
+##### To access information of all shortened url with pagination, similar query should be sent to the service.
+#### Request
+```graphql
 {
   urls(first: 5, page: 3) {
     data {
@@ -88,7 +88,7 @@ mutation {
   }
 }
 ```
-####Response
+#### Response
 ```json
 {
   "data": {
@@ -127,5 +127,5 @@ mutation {
   }
 }
 ```
-##Contact
+## Contact
 If you have any related questions, please contact me. daler.sultonov.00@gmail.com
