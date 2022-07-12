@@ -1,0 +1,20 @@
+"A datetime string with format `Y-m-d H:i:s`, e.g. `2018-05-23 13:43:32`."
+scalar DateTime @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\DateTime")
+
+type Url {
+    id: ID!
+    long_url: String!
+    short_url: String!
+    views: Int!
+}
+
+type Query {
+    url(id: ID! @eq): Url @find
+    urls: [Url!]! @paginate
+}
+
+type Mutation {
+    createUrl(
+        long_url: String! @rules(apply: ["string", "url","max:2086"])
+    ): Url @create
+}
